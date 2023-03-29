@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --hoverTextColor: #f43397
+}
+.header{
+    height: 72px;
+    outline: 1px solid #ccc;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+.headerLeft{
+    display: flex;
+}
+img{
+    width: 100%;
+}
+.logocontainer{
+    width: 155px;
+}
+.searchInputContainer{
+    width: 420px;
+    height: 45px;
+    outline: 1px solid #6e6e6e;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+.searchIcon{
+    width: 20px;
+    
+}
+.inputSearch{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 17px;
+}
+.hiden{
+    display: none;
+}
+.show{
+    display: block;
+}
+/* header-right*/
+.headerRight{
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
+.mobileIcon{
+    width: 15px;
+    margin-right: 8px;
+}
+.downloadContainer{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    position: relative;
+}
+.downloadContainer p{
+    font-weight: 400;
+    line-height: 20px;
+}
+.profileAndCart{
+    display: flex;
+    align-items: center;
+}
+.profileContainer:hover,
+.profileContainer:focus{
+    color: var(--hoverTextColor);
+    cursor: pointer;
+}
+.profileIcon,.cartIcon{
+    width: 20px;
+}
+.profileAndCart p{
+    padding: 0;
+    margin: 0;
+}
+.profileContainer,
+.cartContainer{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.SupplierContainer{
+    padding: 10px 30px;
+    border-left: 2.5px solid #ccc;
+    border-right: 2.5px solid #ccc;
+}
+.downloadContainer:hover{
+    color: var(--hoverTextColor);
+    cursor: pointer;
+}
+.downloadContainer:hover .downloadHoverBtn{
+    display: flex;
+}
+.downloadHoverBtn a{
+  display: flex;
+  width: 90%;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+}
+.downloadHoverBtn{
+    position: absolute;
+    top: 60px;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 180px;
+    width: 212px;
+    font-size: 18px;
+    background:rgb(255, 255, 255);
+    padding: 0 20px;
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgb(34 34 34 / 12%) 0px 2px 4px, rgb(34 34 34 / 12%) 0px 0px 1px;
+}
+
+/* .reseller */
+.reseller {
+    background-image: url(https://meesho.com/_next/static/images/download_banner-19ca4d63d9c1dc44bc8cbfae62b60bd7.jpg);
+    width: 90vw;
+    background-color: rgb(252, 222, 236);
+    height: 90vh;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 5px;
+}
+
+.reseller .android {
+    flex-wrap: wrap;
+    margin-left: 320px;
+    margin-top: 199px;
+    padding-left: 300px;
+    /* border: 1px solid red; */
+}
+
+.android img {
+    height: 50px;
+    width: auto;
+    border: none;
+}
+
+.reseller h1 {
+    color: rgb(244, 51, 151);
+    margin: 50px;
+    font-size: 50px;
+    /* border: 1px solid red; */
+    text-align: right;
+    width: auto;
+}
+
+.reseller h2 {
+    color: rgb(70, 70, 253);
+    margin-top: 50px;
+    margin: 50px;
+    font-size: 30px;
+    /* border: 1px solid red; */
+    text-align: right;
+    width: auto;
+}
+    
+/* .last */
+.last {
+    background-image: url(https://meesho.com/_next/static/images/supply_banner_desk-d53b6ffa3ee3c43feedcfdd0f3d9bd8d.jpg);
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.last>div {
+    /* color: #fff; */
+    margin-left: 50px;
+    /* margin: auto; */
+    padding: 3px;
+    /* border: 1px solid red; */
+}
+
+.last img {
+    margin-left: -15px;
+    color: white;
+    height: 20px;
+    border: none;
+}
+
+.last button {
+    color: rgb(207, 39, 162);
+    padding: 1rem 2rem;
+    margin: 1rem 0 0 3rem;
+    font-weight: bold;
+}
+.cartIcon{
+    display: flex;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+}
+.cartIcon p{
+    text-decoration: none;
+    font-size: 12px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px;
+    margin-left: 3px;
+    
+}
