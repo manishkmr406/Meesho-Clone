@@ -7,7 +7,7 @@ function Product(){
   const [searchResult,setSearchResult]=useState([]);
 
   useEffect(()=>{
-      fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products?limit=10&page=1")
+      fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
      .then(res =>res.json())
      .then(data=>{
         setProducts(data);
