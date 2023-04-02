@@ -1,8 +1,7 @@
 
 import './App.css';
 import { BrowserRouter, Routes,Route } from "react-router-dom";
-import Navbar from './components/Navbar/Navbar.js';
-import Navbar2 from './components/Navbar2/Navbar2.js';
+import Headers from './components/Headers-Navbar/Headers';
 import Content from './components/content/Content.js';
 import Product from './components/Products/product';
 import ProductDetails from './components/productDetails/productDetails';
@@ -16,16 +15,15 @@ import Summary from './components/summary/summary';
 function App() {
   return (
   <BrowserRouter>
-  <Navbar/>
-  <Navbar2/>
+  <Headers/>
   <Routes>
-      <Route path="/" element={
+      <Route exact path="/" element={
         <>
         <Content/>
         <Product/>
           </>
       }/>
-      <Route path="/details/:id" element={<ProductDetails/>} exact/>
+      <Route exact path="/details/:id" element={<ProductDetails/>} exact/>
       <Route path="/checkout/cart" element={<Cart/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/checkout/address' element={<Address/>}/>

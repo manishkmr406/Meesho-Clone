@@ -16,9 +16,6 @@
     letter-spacing: 0.5px;
     color: #403e47;
     padding: 0 12px;
-    position: sticky;
-    top: 73px;
-    z-index: 1;
     background-color: white;
 }
 
@@ -34,7 +31,7 @@
 
 #women_ethnic{
     position: absolute;
-    top: 60px;
+    top: 135px;
     z-index: 1;
     display: none;
     justify-content:left;
@@ -91,7 +88,7 @@
 
 #women_western{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -125,7 +122,7 @@
 
 #jewellery{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -157,7 +154,7 @@
 
 #men{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -193,7 +190,7 @@
 
 #beauty{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -225,7 +222,7 @@
 
 #bags{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -256,7 +253,7 @@
 
 #home_kitchen{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
@@ -288,7 +285,7 @@
 
 #kids{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left:12px;
     z-index: 1;
     display: none;
@@ -320,7 +317,7 @@
 
 #electronics{
     position: absolute;
-    top: 60px;
+    top: 135px;
     left: 12px;
     z-index: 1;
     display: none;
