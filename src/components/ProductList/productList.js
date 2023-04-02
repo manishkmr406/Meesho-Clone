@@ -1,4 +1,4 @@
-
+import React from 'react';
 import "../ProductList/productList.css";
 import {FaStar} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

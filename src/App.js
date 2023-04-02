@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 import Headers from './components/Headers-Navbar/Headers';
@@ -24,7 +24,7 @@ function App() {
           </>
       }/>
       <Route exact path="/details/:id" element={<ProductDetails/>}/>
-      <Route path="/checkout/cart" element={<Cart/>}/>
+      <Route exact path="/checkout/cart" element={<Cart/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/checkout/address' element={<Address/>}/>
       <Route path='/checkout/payment' element={<Payment/>}/>
