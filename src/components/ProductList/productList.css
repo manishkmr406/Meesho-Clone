@@ -1,7 +1,7 @@
 
  .products-container {
-    width: 240px;
-    height: 475px;
+    width: 250px;
+    height: 470px;
     margin: 0 10px;
     margin-bottom: 50px;
     box-shadow: 1px 1px 6px 1px #e3e3e3;
@@ -14,7 +14,7 @@
     transition: 01s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .products-container:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 1px 1px 10px 1px #d0d0d0;
 }
 .main-img {
