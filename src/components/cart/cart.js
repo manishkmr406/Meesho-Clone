@@ -1,8 +1,7 @@
 import { useNavigate} from "react-router-dom";
 import "../cart/cart.css"
-//import { useState } from "react";
 import { useStateContext } from "../context/Context";
-import { useEffect } from "react";
+
 function Cart(){
     const {cartItems,totalPrice,totalQuantities,toggleCartItemQuanitity,onRemove} =useStateContext();
    const navigate=useNavigate();

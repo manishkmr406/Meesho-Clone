@@ -25,7 +25,7 @@ export const StateContext = ({ children }) => {
     const [cartItems,setCartItems]=useState(setCartToLocal());
     const [totalPrice, setTotalPrice] = useState(setTotalToLocal());
     const [totalQuantities, setTotalQuantities] = useState(0);
-    const [qty,setQty]=useState(1);
+    const [qty]=useState(1);
    
     
 
@@ -55,12 +55,12 @@ export const StateContext = ({ children }) => {
 
         if(checkProductInCart) {
             const updatedCartItems = cartItems.map((cartProduct) => {
-              if(cartProduct.id === product.id) return {
+              if(cartProduct.id === product.id)
+               return {
                 ...cartProduct,
                 quantity: cartProduct.quantity + quantity
               }
             })
-      
             setCartItems(updatedCartItems);
           }else {
             product.quantity = quantity;

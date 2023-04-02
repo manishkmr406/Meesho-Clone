@@ -1,5 +1,4 @@
 import "../Navbar2/Navbar2.css";
-//import { Outlet} from "react-router-dom";
 function Navbar2(){
     return (
         <>

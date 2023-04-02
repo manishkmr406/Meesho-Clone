@@ -1,8 +1,6 @@
 import "../summary/modal.css";
-import { useStateContext } from "../context/Context";
 import { Box } from "@mui/system";
 import Typography from "@mui/material/Typography";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const style = {
