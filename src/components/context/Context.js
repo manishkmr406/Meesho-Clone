@@ -1,14 +1,27 @@
 
-import { createContext,useContext,useReducer, useState } from "react";
+import { createContext,useContext,useEffect, useState } from "react";
 
 export const Context=createContext();
 
 export const StateContext = ({ children }) => {
+    const [products,setProducts]=useState([]);
     const [cartItems,setCartItems]=useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty,setQty]=useState(1);
+   
+    
 
+    useEffect(()=>{
+      fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
+     .then(res =>res.json())
+     .then(data=>{
+        setProducts(data);
+     })
+  },[]);
+    
+ 
+  
     let foundProduct;
     let index;
 
@@ -61,9 +74,13 @@ export const StateContext = ({ children }) => {
       }
     }
 
+   
+
     return (
         <Context.Provider 
         value={{
+          products,
+          setProducts,
           cartItems,
           qty,
           setCartItems,
@@ -73,7 +90,7 @@ export const StateContext = ({ children }) => {
           totalPrice,
           setTotalPrice,
           onRemove,
-          toggleCartItemQuanitity
+          toggleCartItemQuanitity,
           }}>
             {children}
         </Context.Provider>

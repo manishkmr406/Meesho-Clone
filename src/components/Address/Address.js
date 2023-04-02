@@ -5,14 +5,14 @@ import { FaLocationArrow } from "react-icons/fa";
 import "../Address/Address.css";
 
 let data = [
-    "Shad Azam",
-    8750665763,
-    "W-38, Chakzohra",
-    "Laheria Sarai",
+    "Manish Kumar",
+    8830668764,
+    "W-38, D3",
+    "Chinchwad",
     846001,
-    "Darbhanga",
-    "BIHAR",
-    "Near Chakzohra Masjid",
+    "Pune",
+    "Maharashtra",
+    "Near Chaphekar chowk",
   ];
 function Address(){
     let [inp, setInp] = useState(data);

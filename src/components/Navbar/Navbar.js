@@ -68,7 +68,7 @@
               </div>
               <div className='cartContainer'>
               
-                <Link to ="/cart"><div className='cartIcon'>
+                <Link to ="/checkout/cart"><div className='cartIcon'>
                     <img src={cart}/>
                     <p>{cartItems.length}</p>
                     </div>

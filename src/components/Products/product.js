@@ -1,80 +1,72 @@
 import "../Products/product.css";
-import { useState,useEffect } from 'react';
+import {  useEffect, useState } from 'react';
 import ProductList from '../ProductList/productList.js';
+import { useStateContext } from "../context/Context";
+
 function Product(){
-  const [products,setProducts]=useState([]);
+  const {products}=useStateContext();
   const [search,setSearch]=useState(" ");
   const [searchResult,setSearchResult]=useState([]);
+  const [filters,setFilters]=useState([]);
 
   useEffect(()=>{
-      fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
-     .then(res =>res.json())
-     .then(data=>{
-        setProducts(data);
-     })
-  },[])
-
-  useEffect(()=>{
+    if(search===""){
+        return setSearchResult([])
+    }
     setSearchResult(products.filter((singleProduct)=>{
         return singleProduct.title.toLowerCase().includes(search.toLowerCase())
     }) )
-   // setSearchResult(searchResult);
-  },[products,search]);
-
+  },[search]);
+  
+  const handleCategory=(catItem) =>{
+    const filterProduct=products.filter((catName)=>
+    catName.category === catItem)
+     setFilters(filterProduct);
+ }
+ 
     return (
-        <>
         <div className="Product-box">
         <h1 >Products For You</h1>
         <div className="product-category-container">
             <aside className="product_category_aside">
                 <h3>Category</h3>
                 <div className="search_category_input">
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                
+                <i className="fa-solid fa-magnifying-glass"></i>
+                <form onSubmit={(e)=>e.preventDefault()}>
                     <input type="text" placeholder="Search" onChange={
                         (e)=> setSearch(e.target.value)
                     }/>
+                    </form>
                 </div>
                 <div className="display_Category_list">
-                    <label for="men's clothing" >
-                        <input type="checkbox" id="men's_clothing"/>
-                        <span>Men's clothing</span>
-                    </label>
-                    <label for="jewelery">
-                        <input type="checkbox" id="jewelery"/>
-                        <span>Jewelery</span>
-                    </label>
-                    <label for="kurtas">
-                        <input type="checkbox" id="kurtas"/>
-                        <span>Kurtas</span>
-                    </label>
-                    <label for="electronics">
-                        <input type="checkbox" id="accessories"/>
-                        <span>Electronics</span>
-                    </label>
-                    <label for="sarees">
-                        <input type="checkbox" id="sarees"/>
-                        <span>sarees</span>
-                    </label>
-                    <label for="watch">
-                        <input type="checkbox" id="watch"/>
-                        <span>watch</span>
-                    </label>
+                   <button className="category-btn" onClick={()=> handleCategory("men's clothing")}>Men's clothing</button>
+                   <button className="category-btn" onClick={()=> handleCategory("women's clothing")}>Women's clothing</button>
+                   <button className="category-btn" onClick={()=> handleCategory("jewelery")}>Jewelery</button>
+                   <button className="category-btn" onClick={()=> handleCategory("electronics")}>Electronics</button>
+                   <button className="category-btn" onClick={()=> setFilters(products)}>All</button>
                 </div>
                 
             </aside>
             <main className="product_category_display">
-                {searchResult.length !==0 ?
-                searchResult.map((el)=>{
-                    return <ProductList key={el.id} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
+    
+               {searchResult.length > 0 ? (
+                searchResult.map((el,idx)=>{
+                    return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
+                })):
+                filters.length >0 ? 
+                    filters.map((el,idx)=>{
+                    return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
                 }):
-                products.map((el)=>{
-                    return <ProductList key={el.id} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
-                })}
+                  products.map((el,idx)=>{
+                    return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
+                    })
+                    }
+               
             </main>
         </div>
     </div>
 
-        </>
     )
 }
 

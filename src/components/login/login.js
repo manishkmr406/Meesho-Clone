@@ -1,11 +1,13 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../login/login.css";
 import { authenticateUser } from "./auth.util";
 function Login(){
     const navigate = useNavigate();
+    const [error,setError]= useState('');
+
     useLayoutEffect(()=>{
-        localStorage.getItem('isAuthenticated') && navigate('/checkout')
+        localStorage.getItem('isAuthenticated') && navigate('/checkout/address')
       },[navigate]);
       
 
@@ -18,9 +20,9 @@ function Login(){
         if (authenticateUser(email, password)) {
           console.log('user is authenticated')
           localStorage.setItem('isAuthenticated', true)
-          navigate('/checkout');
+          navigate('/checkout/address');
         } else {
-          console.log('user is not authenticated')
+          setError('user is not authenticated')
         }
     }
     return(
@@ -32,6 +34,7 @@ function Login(){
             <form onSubmit={handleLoginSubmit}>
                 <input type="email" placeholder="Enter email" name="email"/>
                 <input type="password" placeholder="Enter password" name="password"/>
+                <p>{error}</p>
                 <button type="submit">Sign In</button>
                 <div className="signup_link">
                     No account? <a href="/signup">Create one</a>

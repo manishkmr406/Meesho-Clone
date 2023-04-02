@@ -1,4 +1,5 @@
 import "../content/Content.css";
+
 function Content(){
     return (
      <>
@@ -121,7 +122,7 @@ function Content(){
         </div>
 
     </div>
-
+   
      </>
     )
 }

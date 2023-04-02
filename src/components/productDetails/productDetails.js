@@ -8,13 +8,16 @@ function ProductDetails(){
   const {id} =useParams();
   const [productDetail, setProductDetail] = useState([]);
   const { qty,onAdd}=useStateContext();
-  
+  const [rating,setRating]=useState(0);
+  const [count,setCount]=useState(0);
   useEffect(() => {
-    
+
       fetch(`https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products/${id}`)
       .then((res) => res.json())
       .then(data =>{
             setProductDetail(data);
+            setRating(data.rating.rate)
+            setCount(data.rating.count)
           }   
       )
   }, [id]);
@@ -38,12 +41,12 @@ function ProductDetails(){
             <h3 className="price">
                 ₹{productDetail.price}
             <span className="discount-info">
-              {((productDetail.price) * 1/10).toFixed(1)}% off
+              {((productDetail.price) * 1/100).toFixed(1)}% off
             </span>
             </h3>
             <div className="rating-info">
-                <p> <FaStar /></p>
-                Reviews
+                <p>{rating}  <FaStar /></p>
+               {count} Reviews
             </div>
 
             <h5 className="firstorder-info">
