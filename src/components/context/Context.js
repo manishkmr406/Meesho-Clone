@@ -13,11 +13,11 @@ function setCartToLocal(){
  }
  function setTotalToLocal(){
   let newPrice=localStorage.getItem("total");
-  // if(newPrice=== 0){
-  //   return 0;
-  // }else{
+  if(newPrice=== null){
+    return null;
+  }else{
     return JSON.parse(newPrice);
-  // }
+  }
  }
 
 export const StateContext = ({ children }) => {

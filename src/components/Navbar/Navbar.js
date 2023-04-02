@@ -70,7 +70,7 @@
               
                 <Link to ="/checkout/cart"><div className='cartIcon'>
                     <img src={cart}/>
-                    <p>{totalQuantities}</p>
+                    <p>{cartItems.length}</p>
                     </div>
                     </Link>
                 <p>Cart</p>
