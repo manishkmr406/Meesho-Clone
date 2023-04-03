@@ -9,7 +9,6 @@ export default function Summary() {
       window.scrollTo(0, 0);
     }, []);
     useEffect(()=>{
-      localStorage.clear();
       setCartItems([]);
       setTotalPrice(0);
       setTotalQuantities(0);
