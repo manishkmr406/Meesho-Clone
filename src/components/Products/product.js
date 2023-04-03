@@ -21,9 +21,9 @@ function Product(){
   const handleCategory=(catItem) =>{
     const filterProduct=products.filter((catName)=>
     catName.category === catItem)
-     setFilters(filterProduct);
+    if(filterProduct.length>0)
+     setFilters(filterProduct)
  }
- 
     return (
         <div className="Product-box">
         <h1 >Products For You</h1>
@@ -53,21 +53,18 @@ function Product(){
                {searchResult.length > 0 ? (
                 searchResult.map((el,idx)=>{
                     return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
-                })):
-                filters.length >0 ? 
-                    filters.map((el,idx)=>{
+                })):filters.length >0 ?
+                filters.map((el,idx)=>{
                     return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
                 }):
-                  products.map((el,idx)=>{
+                products.map((el,idx)=>{
                     return <ProductList key={idx} id={el.id} title={el.title} price={el.price} description={el.description} category={el.category} image={el.image} rating={el.rating.rate} />
-                    })
-                    }
-               
+                }) 
+               } 
             </main>
         </div>
     </div>
 
     )
 }
-
 export default Product;
