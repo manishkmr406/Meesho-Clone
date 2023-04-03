@@ -17,11 +17,7 @@
         setInput(e.target.value);
     
     }
-    useEffect(()=>{
-        if(cartItems === []){
-          cartItems.length=0;
-        }
-    },[cartItems]);
+    
     useEffect(()=>{
      if(input===""){
      setDisplay("hiden")
@@ -75,7 +71,7 @@
               
                 <Link to ="/checkout/cart"><div className='cartIcon'>
                     <img src={cart}/>
-                    <p>{cartItems.length}</p>
+                    <p>{totalQuantities}</p>
                     </div>
                     </Link>
                 <p>Cart</p>
