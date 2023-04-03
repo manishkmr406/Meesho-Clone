@@ -3,20 +3,22 @@ import { createContext,useContext,useEffect, useState } from "react";
 
 export const Context=createContext();
 
-function setCartToLocal(){
-     let newCartData=localStorage.getItem("productcart");
-     if(newCartData === []){
-      return [];
-     }else{
-      return JSON.parse(newCartData);
-     }
- }
- function setTotalToLocal(){
-  let newPrice=localStorage.getItem("total");
-    return JSON.parse(newPrice);
- }
+
 
 export const StateContext = ({ children }) => {
+
+  function setCartToLocal(){
+    let newCartData=localStorage.getItem("productcart");
+    if(newCartData === []){
+     return [];
+    }else{
+     return JSON.parse(newCartData);
+    }
+}
+function setTotalToLocal(){
+ let newPrice=localStorage.getItem("total");
+   return JSON.parse(newPrice);
+}
     const [products,setProducts]=useState([]);
     const [cartItems,setCartItems]=useState(setCartToLocal());
     const [totalPrice, setTotalPrice] = useState(setTotalToLocal());
@@ -37,6 +39,8 @@ export const StateContext = ({ children }) => {
     localStorage.setItem("productcart",JSON.stringify(cartItems));
     localStorage.setItem("total",JSON.stringify(totalPrice));
   },[cartItems]);
+
+
   
     let foundProduct;
     let index;
