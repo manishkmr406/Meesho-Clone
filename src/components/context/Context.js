@@ -9,11 +9,11 @@ export const StateContext = ({ children }) => {
 
   function setCartToLocal(){
     let newCartData=localStorage.getItem("productcart");
-    if(newCartData === []){
-     return [];
-    }else{
+    // if(newCartData === []){
+    //  return [];
+    // }else{
      return JSON.parse(newCartData);
-    }
+    
   }
   function setTotalToLocal(){
   let newPrice=localStorage.getItem("total");
