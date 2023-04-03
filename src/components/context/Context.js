@@ -48,10 +48,12 @@ export const StateContext = ({ children }) => {
   
     let foundProduct;
     let index;
+    let checkProductInCart;
 
     const onAdd = (product, quantity) => {
-        const checkProductInCart = cartItems.find((item) => item.id === product.id);
-        
+       if(cartItems.length>0){
+         checkProductInCart = cartItems.find((item) => item.id === product.id);
+       }
         setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
         setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
