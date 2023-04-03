@@ -35,10 +35,8 @@ export const StateContext = ({ children }) => {
     
   useEffect(()=>{
     localStorage.setItem("productcart",JSON.stringify(cartItems));
-  },[cartItems]);
-  useEffect(()=>{
     localStorage.setItem("total",JSON.stringify(totalPrice));
-  },[totalPrice]);
+  },[cartItems]);
   
     let foundProduct;
     let index;
