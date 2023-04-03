@@ -33,8 +33,8 @@ function App() {
       <Route path='/checkout/summary' element={<Summary />}/>
 
     </Routes>
-    <Footer/>
   </BrowserRouter> 
+  <Footer/>
   </> 
 );
 }
