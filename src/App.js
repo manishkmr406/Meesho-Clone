@@ -14,6 +14,7 @@ import Summary from './components/summary/summary';
 
 function App() {
   return (
+    <>
     <Headers/>
   <BrowserRouter>
   
@@ -33,7 +34,8 @@ function App() {
 
     </Routes>
     <Footer/>
-  </BrowserRouter>   
+  </BrowserRouter> 
+  </> 
 );
 }
 export default App;
