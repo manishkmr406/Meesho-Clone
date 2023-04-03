@@ -18,7 +18,7 @@ function Cart(){
           <span id="total-items">{totalQuantities} Items</span>
         </h2>
 		{cartItems.length >=1 && cartItems.map((item,index)=>(
-		  <div key={item.id} id={item.id}>
+		  <div key={index} id={item.id}>
 			<img src={item.image} alt="" />
 			<h3>{item.title}</h3>
 			<p>Only {Math.floor(Math.random()*5)} Left In Stock</p>
