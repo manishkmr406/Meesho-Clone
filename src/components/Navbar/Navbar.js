@@ -18,6 +18,11 @@
     
     }
     useEffect(()=>{
+        if(cartItems === []){
+          cartItems.length=0;
+        }
+    },[cartItems]);
+    useEffect(()=>{
      if(input===""){
      setDisplay("hiden")
      }else
@@ -70,7 +75,7 @@
               
                 <Link to ="/checkout/cart"><div className='cartIcon'>
                     <img src={cart}/>
-                    <p>{JSON.parse(cartItems.length)}</p>
+                    <p>{cartItems.length}</p>
                     </div>
                     </Link>
                 <p>Cart</p>

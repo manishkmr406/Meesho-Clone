@@ -14,11 +14,15 @@ export const StateContext = ({ children }) => {
     }else{
      return JSON.parse(newCartData);
     }
-}
-function setTotalToLocal(){
- let newPrice=localStorage.getItem("total");
+  }
+  function setTotalToLocal(){
+  let newPrice=localStorage.getItem("total");
+  if(newPrice === null){
+  return 0;
+  }else
    return JSON.parse(newPrice);
-}
+  }
+  
     const [products,setProducts]=useState([]);
     const [cartItems,setCartItems]=useState(setCartToLocal());
     const [totalPrice, setTotalPrice] = useState(setTotalToLocal());
@@ -35,10 +39,10 @@ function setTotalToLocal(){
      })
   },[]);
     
-  // useEffect(()=>{
-  //   localStorage.setItem("productcart",JSON.stringify(cartItems));
-  //   localStorage.setItem("total",JSON.stringify(totalPrice));
-  // },[cartItems]);
+  useEffect(()=>{
+    localStorage.setItem("productcart",JSON.stringify(cartItems));
+    localStorage.setItem("total",JSON.stringify(totalPrice));
+  },[cartItems]);
 
 
   
