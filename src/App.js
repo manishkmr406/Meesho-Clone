@@ -14,10 +14,8 @@ import Summary from './components/summary/summary';
 
 function App() {
   return (
-    <>
-    <Headers/>
   <BrowserRouter>
-  
+    <Headers/>
   <Routes>
       <Route exact path="/" element={
         <>
@@ -33,9 +31,9 @@ function App() {
       <Route path='/checkout/summary' element={<Summary />}/>
 
     </Routes>
+    <Footer/>
   </BrowserRouter> 
-  <Footer/>
-  </> 
+  
 );
 }
 export default App;
