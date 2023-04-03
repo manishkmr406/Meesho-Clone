@@ -7,14 +7,14 @@ export const Context=createContext();
 
 export const StateContext = ({ children }) => {
 
-  // function setCartToLocal(){
-  //   let newCartData=localStorage.getItem("productcart");
-  //   if(newCartData === []){
-  //    return [];
-  //   }else{
-  //    return JSON.parse(newCartData);
-  //   }
-  // }
+  function setCartToLocal(){
+    let newCartData=localStorage.getItem("productcart");
+    if(newCartData === []){
+     return [];
+    }else{
+     return JSON.parse(newCartData);
+    }
+  }
   function setTotalToLocal(){
   let newPrice=localStorage.getItem("total");
   if(newPrice === null){
@@ -24,7 +24,7 @@ export const StateContext = ({ children }) => {
   }
   
     const [products,setProducts]=useState([]);
-    const [cartItems,setCartItems]=useState([]);
+    const [cartItems,setCartItems]=useState(setCartToLocal());
     const [totalPrice, setTotalPrice] = useState(setTotalToLocal());
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty]=useState(1);
@@ -44,13 +44,7 @@ export const StateContext = ({ children }) => {
     localStorage.setItem("total",JSON.stringify(totalPrice));
   },[cartItems]);
   
-  useEffect(()=>{
-    if(!cartItems.length){
-      const getCartData=localStorage.getItem("productcart");
-      const localItems=JSON.parse(getCartData);
-      setCartItems(localItems)
-    }
-  },[cartItems]);
+  
 
   
     let foundProduct;
