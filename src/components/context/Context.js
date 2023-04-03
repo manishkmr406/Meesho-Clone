@@ -3,27 +3,27 @@ import { createContext,useContext,useEffect, useState } from "react";
 
 export const Context=createContext();
 
-function setCartToLocal(){
-     let newCartData=localStorage.getItem("productcart");
-     if(newCartData === []){
-      return [];
-     }else{
-      return JSON.parse(newCartData);
-     }
- }
- function setTotalToLocal(){
-  let newPrice=localStorage.getItem("total");
-  if(newPrice=== null){
-    return null;
-  }else{
-    return JSON.parse(newPrice);
-  }
- }
+// function setCartToLocal(){
+//      let newCartData=localStorage.getItem("productcart");
+//      if(newCartData === []){
+//       return [];
+//      }else{
+//       return JSON.parse(newCartData);
+//      }
+//  }
+//  function setTotalToLocal(){
+//   let newPrice=localStorage.getItem("total");
+//   if(newPrice=== null){
+//     return null;
+//   }else{
+//     return JSON.parse(newPrice);
+//   }
+//  }
 
 export const StateContext = ({ children }) => {
     const [products,setProducts]=useState([]);
-    const [cartItems,setCartItems]=useState(setCartToLocal());
-    const [totalPrice, setTotalPrice] = useState(setTotalToLocal());
+    const [cartItems,setCartItems]=useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty]=useState(1);
    
@@ -37,12 +37,12 @@ export const StateContext = ({ children }) => {
      })
   },[]);
     
-  useEffect(()=>{
-    localStorage.setItem("productcart",JSON.stringify(cartItems));
-  },[cartItems]);
-  useEffect(()=>{
-    localStorage.setItem("total",JSON.stringify(totalPrice));
-  },[totalPrice]);
+  // useEffect(()=>{
+  //   localStorage.setItem("productcart",JSON.stringify(cartItems));
+  // },[cartItems]);
+  // useEffect(()=>{
+  //   localStorage.setItem("total",JSON.stringify(totalPrice));
+  // },[totalPrice]);
   
     let foundProduct;
     let index;

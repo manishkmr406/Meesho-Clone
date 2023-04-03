@@ -23,8 +23,8 @@ function App() {
         <Product/>
           </>
       }/>
-      <Route exact path="/details/:id" element={<ProductDetails/>}/>
-      <Route exact path="/checkout/cart" element={<Cart/>}/>
+      <Route path="/details/:id" element={<ProductDetails/>}/>
+      <Route path="/checkout/cart" element={<Cart/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/checkout/address' element={<Address/>}/>
       <Route path='/checkout/payment' element={<Payment/>}/>
