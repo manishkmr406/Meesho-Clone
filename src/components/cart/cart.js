@@ -15,7 +15,7 @@ function Cart(){
         <h1>Order Summary</h1>
         <h2>
           Cart <span id="cart-line">| </span>
-          <span id="total-items">{totalQuantities} Items</span>
+          <span id="total-items">{cartItems.length} Items</span>
         </h2>
 		{cartItems.length >=1 && cartItems.map((item,index)=>(
 		  <div key={index} id={item.id}>
