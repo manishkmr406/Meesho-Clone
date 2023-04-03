@@ -17,7 +17,7 @@ function Cart(){
           Cart <span id="cart-line">| </span>
           <span id="total-items">{totalQuantities} Items</span>
         </h2>
-		{cartItems.length >=1 && cartItems.map((item,index)=>(
+		{cartItems.map((item,index)=>(
 		  <div key={item.id} id={item.id}>
 			<img src={item.image} alt="" />
 			<h3>{item.title}</h3>
