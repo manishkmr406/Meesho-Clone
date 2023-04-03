@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
 import "../Address/Address.css";
+import { useStateContext } from "../context/Context";
 
 let data = [
     "Manish Kumar",
@@ -15,6 +16,7 @@ let data = [
     "Near Chaphekar chowk",
   ];
 function Address(){
+  const { totalPrice }=useStateContext();
     let [inp, setInp] = useState(data);
     const navigate = useNavigate();
 
@@ -110,7 +112,7 @@ function Address(){
         <div>
           <h1>Price Details</h1>
           <p>
-            Product Charges<span>₹{localStorage.getItem("total")}</span>
+            Product Charges<span>₹{totalPrice}</span>
           </p>
           <p>
             Delivery Charges<span>+ ₹0</span>
@@ -123,7 +125,7 @@ function Address(){
           </p>
           <hr />
           <h2>
-            Order Total <span>₹{localStorage.getItem("total") - 50}</span>
+            Order Total <span>₹{totalPrice - 50}</span>
           </h2>
         </div>
       </section>

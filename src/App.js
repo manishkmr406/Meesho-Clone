@@ -14,14 +14,15 @@ import Summary from './components/summary/summary';
 
 function App() {
   return (
+    <Headers/>
   <BrowserRouter>
-  <Headers/>
+  
   <Routes>
       <Route exact path="/" element={
         <>
         <Content/>
         <Product/>
-          </>
+        </>
       }/>
       <Route path="/details/:id" element={<ProductDetails/>}/>
       <Route path="/checkout/cart" element={<Cart/>}/>
