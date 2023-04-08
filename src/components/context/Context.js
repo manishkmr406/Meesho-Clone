@@ -38,10 +38,10 @@ export const StateContext = ({ children }) => {
      })
   },[]);
     
-  // useEffect(()=>{
-  //   localStorage.setItem("productcart",JSON.stringify(cartItems));
-  //   localStorage.setItem("total",JSON.stringify(totalPrice));
-  // },[cartItems]);
+  useEffect(()=>{
+    localStorage.setItem("productcart",JSON.stringify(cartItems));
+    localStorage.setItem("total",JSON.stringify(totalPrice));
+  },[cartItems]);
   
   
 
@@ -70,8 +70,6 @@ export const StateContext = ({ children }) => {
             
             setCartItems([...cartItems, { ...product }]);
           }
-          localStorage.setItem("productcart",JSON.stringify(cartItems));
-          localStorage.setItem("total",JSON.stringify(totalPrice));
     }
 
     const onRemove = (product) => {
