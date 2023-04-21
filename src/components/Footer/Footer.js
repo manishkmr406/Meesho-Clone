@@ -11,12 +11,16 @@ function Footer(){
               <br /> Cash on Delivery | Free Delivery
             </p>
             <div className="App-container">
+                <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow" target="_blank">
                 <div className="App-download">
                     <img src="https://images.meesho.com/images/pow/playstoreIcon.webp" alt=""/>
                 </div>
+                </a>
+                <a href="https://apps.apple.com/us/app/meesho/id1457958492" target="_blank">
                 <div className="App-download">
                     <img src="https://images.meesho.com/images/pow/appstoreIcon.webp" alt="" />
                 </div>
+                </a> 
             </div>
           </div>
         </div>
