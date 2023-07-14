@@ -15,9 +15,6 @@
     align-items: center;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
-    /* position: sticky;
-    top: 0;
-    z-index: 1; */
     background-color: white;
 }
 .headerLeft{
@@ -28,6 +25,7 @@ img{
 }
 .logocontainer{
     width: 155px;
+    cursor: pointer;
 }
 .searchInputContainer{
     width: 420px;
@@ -41,7 +39,6 @@ img{
 }
 .searchIcon{
     width: 20px;
-    
 }
 .inputSearch{
     width: 100%;
@@ -50,12 +47,35 @@ img{
     padding: 0 10px;
     font-size: 17px;
 }
-.hiden{
-    display: none;
-}
-.show{
+.searchRecentModal{
+    position: absolute;
+    bottom: 0;
+    left: 190px;
+    top: 73px;
+    background-color: white;
+    height: 400px;
+    width: 600px;
     display: block;
+    padding: 15px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    z-index: 3;
+    overflow: hidden;
 }
+/* .searchInputContainer:focus-within .searchRecentModal{
+    display: block;
+    background-color: white;
+} */
+.recentIcon{
+    width: 20px;
+    margin-right: 10px;
+}
+.recentItem{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
 /* header-right*/
 .headerRight{
     display: flex;
@@ -92,6 +112,36 @@ img{
     padding: 0;
     margin: 0;
 }
+h5{
+    color: #ccc;
+  }
+.profileHoverBtnContainer{
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 180px;
+    width: 212px;
+    font-size: 18px;
+    background:rgb(255, 255, 255);
+    padding: 0 20px;
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: rgb(34 34 34 / 12%) 0px 2px 4px, rgb(34 34 34 / 12%) 0px 0px 1px;
+}
+.login_btn{
+    width: 160px;
+    background-color: rgb(244, 51, 151);
+    color: white;
+    padding: 18px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 .profileContainer,
 .cartContainer{
     padding: 0 20px;
@@ -105,12 +155,13 @@ img{
     border-left: 2.5px solid #ccc;
     border-right: 2.5px solid #ccc;
 }
+
+/* download */
 .downloadContainer:hover{
     color: var(--hoverTextColor);
     cursor: pointer;
 }
-.downloadContainer:hover .downloadHoverBtn,
-.downloadContainer:focus .downloadHoverBtn{
+.downloadContainer:hover .downloadHoverBtn{
     display: flex;
 }
 .downloadHoverBtn a{
@@ -213,18 +264,17 @@ img{
     font-weight: bold;
 }
 .cartIcon{
+    text-decoration: none;
     display: flex;
     font-size: 18px;
     color: red;
     cursor: pointer;
 }
 .cartIcon p{
-    text-decoration: none;
     font-size: 12px;
     background-color: red;
     color: #fff;
     border-radius: 50%;
     padding: 2px;
     margin-left: 3px;
-    
 }

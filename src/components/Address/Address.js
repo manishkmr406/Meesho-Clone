@@ -4,9 +4,14 @@ import { FaPhone } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
 import "../Address/Address.css";
 import { useStateContext } from "../context/Context";
+import { useUserAuth } from "../context/UserAuthContext";
 
-let data = [
-    "Manish Kumar",
+function Address(){
+  const { totalPrice }=useStateContext();
+  const {user}=useUserAuth();
+  const Nickname=user.email.substring(0,user.email.indexOf("@"));
+  const data = [
+    Nickname,
     8830668764,
     "W-38, D3",
     "Chinchwad",
@@ -15,9 +20,7 @@ let data = [
     "Maharashtra",
     "Near Chaphekar chowk",
   ];
-function Address(){
-  const { totalPrice }=useStateContext();
-    let [inp, setInp] = useState(data);
+    const [inp, setInp] = useState(data);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -34,6 +37,7 @@ function Address(){
         newInp[+id] = value;
         setInp(newInp);
       };
+      
     return (
         <section id="address-section">
         <form action="" onSubmit={handleSubmit}>
@@ -125,7 +129,7 @@ function Address(){
           </p>
           <hr />
           <h2>
-            Order Total <span>₹{totalPrice - 50}</span>
+            Order Total <span>₹{(totalPrice-50).toFixed(2)}</span>
           </h2>
         </div>
       </section>

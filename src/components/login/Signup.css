@@ -1,11 +1,11 @@
-.login_container{
+.signup_container{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ),
-      url("https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/0b8e/6422/560a/0f5c/680f/917b/371c/9c0e/907a/803e/803e.jpeg")
+      url("https://static.startuptalky.com/2022/04/How-to-Market-Your-Product-on-Meesho-StartupTalky.jpg")
         center ;
     background-size: cover;
     display: flex;

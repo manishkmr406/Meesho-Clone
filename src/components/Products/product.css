@@ -52,6 +52,9 @@
     flex-direction: column;
     gap: 25px;
 }
+.display_Category_list button:focus{
+    background-color: #a00655;
+}
 .category-btn{
     padding: 10px 0;
     border: none;

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../payment/payment.css"
+import { useUserAuth } from "../context/UserAuthContext";
 
-let data = ["1234 5678 9101 2345", "12/25", "123", "Manish Kumar"];
 function Payment(){
+  const {user}=useUserAuth();
+  const Nickname=user.email.substring(0,user.email.indexOf("@"));
+  const data = ["1234 5678 9101 2345", "12/25", "123", Nickname];
     let [inp, setInp] = useState(data);
     let [color, setColor] = useState("#06A759");
     const navigate = useNavigate();

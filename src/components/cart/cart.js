@@ -1,16 +1,30 @@
-
 import { useNavigate} from "react-router-dom";
 import "../cart/cart.css"
 import { useStateContext } from "../context/Context";
+import { toast } from "react-toastify";
+import { useUserAuth } from "../context/UserAuthContext";
+import { useEffect } from "react";
 
 function Cart(){
     const {cartItems,totalPrice,totalQuantities,toggleCartItemQuanitity,onRemove} =useStateContext();
-	console.log(cartItems)
-
+   const { user }=useUserAuth();
    const navigate=useNavigate();
 
+   useEffect(()=>{
+    window.scrollTo(0,0);
+   },[]);
 
-	console.log(cartItems)
+   const addToAuth=()=>{
+	if(!user){
+		toast.error("Please login first",{
+		  position: toast.POSITION.TOP_RIGHT,}
+		)
+		navigate('/signup');
+   }else{
+	navigate('/checkout/address');
+   }
+}
+
     return(
         <main id="cart-main">
       <section>
@@ -46,10 +60,10 @@ function Cart(){
 		<p>
          Total Amount:{" "}
             <span>
-              Rs.{Math.round(totalPrice*100)/100}
+              Rs.{(Math.round(totalPrice*100)/100).toFixed(2)}
             </span>
           </p>
-		  <button onClick={()=> navigate("/login")}>CheckOut</button>
+		  <button onClick={addToAuth}>CheckOut</button>
 		</div>
 		<div>
           <p style={{ fontSize: "11px", lineHeight: "145%", color: "#888" }}>

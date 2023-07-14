@@ -11,6 +11,7 @@ import Login from './components/login/login';
 import Address from './components/Address/Address';
 import Payment from './components/payment/payment';
 import Summary from './components/summary/summary';
+import Signup from './components/login/Signup';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       }/>
       <Route path="/details/:id" element={<ProductDetails/>}/>
       <Route path="/checkout/cart" element={<Cart/>}/>
+      <Route path="/signup" element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/checkout/address' element={<Address/>}/>
       <Route path='/checkout/payment' element={<Payment/>}/>

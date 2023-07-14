@@ -45,6 +45,7 @@
     color: #333;
     margin-bottom: 13px;
     font-weight: 500;
+    cursor: pointer;
 }
 .contact-container h3{
     margin-bottom: 15px;
@@ -55,6 +56,7 @@
 }
 #icons div{
     display: flex;
+    cursor: pointer;
 }
 #icons img {
     height: 25px;

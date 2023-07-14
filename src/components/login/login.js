@@ -1,48 +1,57 @@
-import { useLayoutEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../login/login.css";
-import { authenticateUser } from "./auth.util";
-function Login(){
+import React, { useState } from 'react';
+import "./login.css";
+import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
+import { useUserAuth } from '../context/UserAuthContext';
+
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const { logIn } = useUserAuth();
     const navigate = useNavigate();
-    const [error,setError]= useState('');
 
-    useLayoutEffect(()=>{
-        localStorage.getItem('isAuthenticated') && navigate('/checkout/address')
-      },[navigate]);
-      
-
-    const handleLoginSubmit= (e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('is this working?')
-        const formData = new FormData(e.currentTarget)
-        const email = formData.get('email')
-        const password = formData.get('password')
-        if (authenticateUser(email, password)) {
-          console.log('user is authenticated')
-          localStorage.setItem('isAuthenticated', true)
-          navigate('/checkout/address');
-        } else {
-          setError('user is not authenticated')
+        setError("");
+        try {
+          await logIn(email, password);
+          navigate("/");
+        } catch (err) {
+          setError(err.message);
         }
-    }
-    return(
-        <div className="login-box">
-    <div className="center">
-        <h3>Sign In</h3>
-        <p>Use your account for sign in.</p>
-        <div className="txt_field">
-            <form onSubmit={handleLoginSubmit}>
-                <input type="email" placeholder="Enter email" name="email"/>
-                <input type="password" placeholder="Enter password" name="password"/>
-                <p>{error}</p>
-                <button type="submit">Sign In</button>
-                <div className="signup_link">
-                    No account? <a href="/signup">Create one</a>
-                </div>
-            </form>
+      };
+  return (
+    <div className='login_container'>
+    <div className='wrapper'>
+        <h1>SIGN IN</h1>
+        {error && <p>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            className="input"
+            name="email"
+            required
+            type="email"
+            placeholder="Enter your mailID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className="input"
+            name="pass"
+            type="password"
+            required
+            placeholder="*******"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          {/* {err ? <div style={{color: 'red' , font_size: '15px'}}>{errtxt}</div> : null} */}
+          <button>LOGIN</button>
+        </form>
         </div>
-    </div>
-    </div>
-    )
+        </div>
+  )
 }
+
 export default Login;
