@@ -1,8 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+require('dotenv').config();
+
+const API_KEY=process.env.API_KEY_AUTH;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBZYe9zVbyJP6gfT9fGLh7ftah64qnTl-A",
+  apiKey: API_KEY,
   authDomain: "meesho-auth-1dc6e.firebaseapp.com",
   projectId: "meesho-auth-1dc6e",
   storageBucket: "meesho-auth-1dc6e.appspot.com",
