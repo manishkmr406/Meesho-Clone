@@ -1,17 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-require('dotenv').config();
 
-const API_KEY=process.env.API_KEY_AUTH;
 
 const firebaseConfig = {
-  apiKey: API_KEY,
-  authDomain: "meesho-auth-1dc6e.firebaseapp.com",
-  projectId: "meesho-auth-1dc6e",
-  storageBucket: "meesho-auth-1dc6e.appspot.com",
-  messagingSenderId: "883648586208",
-  appId: "1:883648586208:web:a8feb7d721ba75329bcb85",
-  measurementId: "G-VN8RZJQKHM"
+  apiKey: "AIzaSyDjUKk_VlKBGMeU16FQWbcfwGG_RzaHiQs",
+  authDomain: "react-clone-m.firebaseapp.com",
+  projectId: "react-clone-m",
+  storageBucket: "react-clone-m.appspot.com",
+  messagingSenderId: "600747047383",
+  appId: "1:600747047383:web:8446b36d3b973facdf7392",
+  measurementId: "G-0E61PERXPC"
 };
 
 // Initialize Firebase
