@@ -352,3 +352,9 @@
     height: 1px;
     background-color:#e3e3e3 ;
 }
+
+@media screen and (max-width: 550px) {
+    #nav_2{
+        display: none;
+    }    
+}

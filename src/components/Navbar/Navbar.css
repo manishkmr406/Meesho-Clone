@@ -278,3 +278,40 @@ h5{
     padding: 2px;
     margin-left: 3px;
 }
+@media screen and (max-width: 1024px) {
+    .headerRight{
+      margin-left: 2rem;
+    }
+    .searchInputContainer{
+      width: 10rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .logoContainer{
+      width: 4rem;
+    }
+    .searchInputContainer{
+      width: 15rem;
+    }
+    .headerRight{
+      margin-left: 0.5rem;
+    }
+  }
+
+@media screen and (max-width: 550px){
+    .logoContainer{
+        width: 100px;
+        transform: rotateY(45deg);
+    }
+    .logocontainer img{
+        width: 90%;
+    }
+    .searchInputContainer{
+        display: none;
+    }
+    .downloadContainer{
+        display: none;
+        font-weight: lighter;
+    }
+}

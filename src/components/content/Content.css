@@ -45,7 +45,7 @@
     background-color: var(--hoverTextColor);
     border:none;
     outline: none;
-    padding: 0 10px;
+    padding: 0 20px;
     border-radius: 5px;
     color:white;
 }
@@ -215,3 +215,84 @@
 }
 
 
+/* @media screen and (max-width: 550px) {
+    .lowestpriceContainer{
+        margin: auto;
+    }
+    .lowestpriceContainer h1{
+        font-size: 20px;
+    }
+    .lowestPriceWhay{
+        flex-wrap: wrap;
+        margin-top: 5px;
+    }
+    .lowestPriceItem{
+        border: none;
+        margin-bottom: 5px;
+    }
+    .lowestPrice_icon{
+        width: 20px;
+    }
+    .downloadApp_contianer{
+        margin-top: 40px;
+        height: 40px;
+    }
+    .downloadApp_contianer p{
+        padding: 5px;
+        font-size: 12px;
+    }
+} */
+
+@media (max-width: 550px) {
+    .lowestPrice_text,
+    .lowestPrice_image,
+    .topCategoreisImage,
+    .essentialContaienr,
+    .topCategoriesFrom,
+    .becomesellerBanner_Container,
+    .meesho-suppliear_benifit_container {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lowestPrice_item,
+    .essential_item,
+    .meesho_supper_benifit {
+        padding: 10px;
+    }
+
+    .lowestPriceWhay,
+    .topCategoriesHeading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topCategoriesHeading h1,
+    .becomeSeller_content_content h1,
+    .becomeSeller_content_content h2 {
+        font-size: 24px;
+    }
+
+    .topCategoreisImage img,
+    .essentialContaienr img {
+        max-width: 100%;
+        margin: 10px;
+        bottom: 0;
+    }
+
+    .becomesellerBanner_Container img {
+        height: auto;
+    }
+
+    .becomerSeller_appDownload,
+    .signup_btn_now {
+        width: auto;
+        height: auto;
+    }
+
+    .meesho_supper_benifit {
+        border-right: none;
+    }
+}
