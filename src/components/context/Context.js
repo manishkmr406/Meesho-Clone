@@ -31,7 +31,7 @@ export const StateContext = ({ children }) => {
     
 
     useEffect(()=>{
-      fetch("https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products")
+      fetch("https://fakestoreapi.com/products")
      .then(res =>res.json())
      .then(data=>{
         setProducts(data);
